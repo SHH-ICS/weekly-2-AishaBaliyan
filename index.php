@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $diameter = floatval($_POST['diameter']);
 
   if ($diameter <= 0) {
-    $error = "Please enter a valid positive diameter.";
+    $error = "enter a valid positive diameter :)";
   } else {
     $area = calculateArea($diameter);
     $circumference = calculateCircumference($diameter);
