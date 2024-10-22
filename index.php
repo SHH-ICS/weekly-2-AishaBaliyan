@@ -1,3 +1,25 @@
+<?php
+define('PI', 3.14159);
+function calculateArea($diameter)
+{
+  $radius = $diameter / 2;
+  return PI * $radius * $radius;
+}
+function calculateCircumference($diameter)
+{
+  return PI * $diameter;
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $diameter = floatval($_POST['diameter']);
+
+  if ($diameter <= 0) {
+    $error = "Please enter a valid positive diameter.";
+  } else {
+    $area = calculateArea($diameter);
+    $circumference = calculateCircumference($diameter);
+  }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
